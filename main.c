@@ -61,7 +61,7 @@ unsigned char *generateReply(unsigned char *result) {
     // combining header of ethernet and body of arp reply
     memcpy(result, &header, sizeof(struct ether_header));
     memcpy(result + sizeof(struct ether_header), &body, sizeof(struct ether_arp));
-    printf("sending from %d.%d.%d.%d(%d-%d-%d-%d-%d-%d) to %d.%d.%d.%d(%d-%d-%d-%d-%d-%d)\n",
+    printf("sending from %d.%d.%d.%d(%02x-%02x-%02x-%02x-%02x-%02x) to %d.%d.%d.%d(%02x-%02x-%02x-%02x-%02x-%02x)\n",
            srcIP[0], srcIP[1], srcIP[2], srcIP[3],
            srcMAC[0], srcMAC[1], srcMAC[2], srcMAC[3], srcMAC[4], srcMAC[5],
            dstIP[0], dstIP[1], dstIP[2], dstIP[3],
