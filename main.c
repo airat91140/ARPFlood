@@ -38,13 +38,13 @@ int setDevice() { // setting device to open handler
     return 0;
 }
 
-char *generateIP(uint8_t *p) {
+uint8_t *generateIP(uint8_t *p) {
     for (int i = 0; i < 4; ++i)
-        p[i] = rand() & 0xFF; // we definitely have no reason to use htons, because we have random generated values
-    return p; // and no matter if they are in right ethernet order or not
+        p[i] = rand() & 0xFF;
+    return p;
 }
 
-char *generateMAC(uint8_t *p) {
+uint8_t *generateMAC(uint8_t *p) {
     for (int i = 0; i < 6; ++i)
         p[i] = rand() & 0xFF;
     return p;
